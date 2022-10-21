@@ -10,15 +10,6 @@
   margin: 32px 0;
 }
 
-table {
-  border: 1px solid black;
-  border-radius: 20px;
-  box-shadow: rgb(0 0 0 / 20%) 0 2px 4px -1px , rgb(0 0 0 / 14%) 0 4px 5px 0;
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-}
-
 .name-filter {
   display: flex;
   flex-direction: column;
@@ -33,6 +24,43 @@ table {
   height: 40px;
   margin: 5px;
   padding: 0 0 0 15px;
+}
+
+.select-inputs {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 20%) 0 2px 4px -1px , rgb(0 0 0 / 14%) 0 4px 5px 0;
+  height: 40px;
+  margin: 5px;
+  padding: 0 0 0 15px;
+}
+
+.btn-filter {
+  align-items: center;
+  align-self: center;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  margin: 5px;
+  width: 200px;
+}
+
+.btn-filter:hover {
+  background-color: rgb(7, 146, 146);
+}
+
+table {
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 20%) 0 2px 4px -1px , rgb(0 0 0 / 14%) 0 4px 5px 0;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
 }
 
 thead {

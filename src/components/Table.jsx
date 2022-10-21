@@ -2,11 +2,25 @@ import React, { useContext } from 'react';
 import { Mycontext } from '../context/MyContext';
 
 function Table() {
-  const { planets, nameFilter } = useContext(Mycontext);
+  const { planets, nameFilter, filterNumeric } = useContext(Mycontext);
 
   const dataFiltered = planets
     // Filtro de texto
-    .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()));
+    .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()))
+    .filter((planet) => filterNumeric.every(({ column, comparison, value }) => {
+      /*
+      + Está verificando se o valor é numérico. Quando o unário +for aplicado,
+      ele retornará a representação numérica de um objeto ou NaN, que será a base para que
+      a comparação seja aprovada ou reprovada.
+      */
+      if (comparison === 'maior que') {
+        return +planet[column] > +value;
+      }
+      if (comparison === 'menor que') {
+        return +planet[column] < +value;
+      }
+      return +planet[column] === +value;
+    }));
 
   return (
     <div className="container">

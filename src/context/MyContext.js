@@ -7,6 +7,7 @@ export const Mycontext = createContext();
 function Provider({ children }) {
   const [planets, setPlanets] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [filterNumeric, setFilterNumeric] = useState([]);
 
   useEffect(() => {
     const fetchPlanets = async () => {
@@ -25,8 +26,10 @@ function Provider({ children }) {
   const contextValue = useMemo(() => ({ // https://pt-br.reactjs.org/docs/hooks-reference.html#usememo (estava dando erro no lint e pesquisei um pouco)
     planets,
     nameFilter,
+    filterNumeric,
     setNameFilter,
-  }), [planets, nameFilter]);
+    setFilterNumeric,
+  }), [planets, nameFilter, filterNumeric]);
 
   return (
     <Mycontext.Provider value={ contextValue }>
