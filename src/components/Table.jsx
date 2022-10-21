@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { Mycontext } from '../context/MyContext';
 
 function Table() {
-  const planets = useContext(Mycontext);
+  const { planets, nameFilter } = useContext(Mycontext);
 
-  // const planetElement = 'planet-element';
-  // const planetFilms = 'planet-films';
+  const dataFiltered = planets
+    // Filtro de texto
+    .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()));
+
   return (
     <div>
       <table>
@@ -27,7 +29,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {planets.map((planet) => (
+          {dataFiltered.map((planet) => (
             <tr key={ planet.name } className="planet-name">
               {Object.values(planet).map((element) => (
                 <td key={ element } className="planet-element">

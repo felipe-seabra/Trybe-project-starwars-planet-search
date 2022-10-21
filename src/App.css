@@ -4,8 +4,31 @@
   padding: 0;
 }
 
+table {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-filter {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+}
+
+.name-filter input {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 40px;
+  margin: 5px;
+  padding: 0 0 0 15px;
+}
+
 thead {
   background-color: aqua;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,13 +45,6 @@ thead tr th {
   flex-wrap: wrap;
   justify-content: center;
   width: 150px;
-}
-
-tbody {
-  border: 1px solid black;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
 .planet-name {
