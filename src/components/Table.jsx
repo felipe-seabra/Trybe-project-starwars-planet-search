@@ -12,6 +12,7 @@ function Table() {
       + Está verificando se o valor é numérico. Quando o unário +for aplicado,
       ele retornará a representação numérica de um objeto ou NaN, que será a base para que
       a comparação seja aprovada ou reprovada.
+      (https://stackoverflow.com/questions/14108008/javascript-comparison-value-value)
       */
       if (comparison === 'maior que') {
         return +planet[column] > +value;
