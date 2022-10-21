@@ -9,7 +9,7 @@ function Table() {
     .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()));
 
   return (
-    <div>
+    <div className="container">
       <table>
         <thead>
           <tr>
