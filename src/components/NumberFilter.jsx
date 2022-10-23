@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+
 import { Mycontext } from '../context/MyContext';
 
 function NumberFilter() {
@@ -32,7 +33,12 @@ function NumberFilter() {
     setcolumnFilter([
       ...newColumn,
     ]);
-    console.log(newColumn);
+    setNumberFilters({
+      column: newColumn[0],
+      comparison: 'maior que',
+      value: '0',
+    });
+    console.log(numberFilters);
   };
 
   return (
@@ -83,7 +89,7 @@ function NumberFilter() {
         className="btn-filter"
         type="button"
         data-testid="button-filter"
-        onClick={ filter }
+        onClick={ () => filter() }
       >
         Filtrar
       </button>
