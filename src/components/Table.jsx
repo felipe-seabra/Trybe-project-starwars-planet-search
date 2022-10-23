@@ -7,6 +7,7 @@ function Table() {
   const dataFiltered = planets
     // Filtro de texto
     .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()))
+    // Filtro Numérico
     .filter((planet) => filterNumeric.every(({ column, comparison, value }) => {
       /*
       + Está verificando se o valor é numérico. Quando o unário +for aplicado,
@@ -14,13 +15,16 @@ function Table() {
       a comparação seja aprovada ou reprovada.
       (https://stackoverflow.com/questions/14108008/javascript-comparison-value-value)
       */
-      if (comparison === 'maior que') {
+      switch (comparison) {
+      case 'maior que':
         return +planet[column] > +value;
-      }
-      if (comparison === 'menor que') {
+      case 'menor que':
         return +planet[column] < +value;
+      case 'igual a':
+        return +planet[column] === +value;
+      default:
+        return planet;
       }
-      return +planet[column] === +value;
     }));
 
   return (
