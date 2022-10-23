@@ -9,22 +9,13 @@ function Table() {
     .filter((planet) => planet.name.toLowerCase().includes(nameFilter.toLowerCase()))
     // Filtro Numérico
     .filter((planet) => filterNumeric.every(({ column, comparison, value }) => {
-      /*
-      + Está verificando se o valor é numérico. Quando o unário +for aplicado,
-      ele retornará a representação numérica de um objeto ou NaN, que será a base para que
-      a comparação seja aprovada ou reprovada.
-      (https://stackoverflow.com/questions/14108008/javascript-comparison-value-value)
-      */
-      switch (comparison) {
-      case 'maior que':
-        return +planet[column] > +value;
-      case 'menor que':
-        return +planet[column] < +value;
-      case 'igual a':
-        return +planet[column] === +value;
-      default:
-        return planet;
+      if (comparison === 'maior que') {
+        return Number(planet[column]) > Number(value);
       }
+      if (comparison === 'menor que') {
+        return Number(planet[column]) < Number(value);
+      }
+      return Number(planet[column]) === Number(value);
     }));
 
   return (
