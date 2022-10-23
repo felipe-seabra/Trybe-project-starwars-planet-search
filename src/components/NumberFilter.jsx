@@ -12,19 +12,28 @@ function NumberFilter() {
 
   const { column, comparison, value } = numberFilters;
 
-  const columnFilter = [
+  const [columnFilter, setcolumnFilter] = useState([
     'population',
     'orbital_period',
     'diameter',
     'rotation_period',
     'surface_water',
-  ];
+  ]);
 
   const comparisonFilter = [
     'maior que',
     'menor que',
     'igual a',
   ];
+
+  const filter = () => {
+    setFilterNumeric([...filterNumeric, numberFilters]);
+    const newColumn = columnFilter.filter((e) => e !== numberFilters.column);
+    setcolumnFilter([
+      ...newColumn,
+    ]);
+    console.log(newColumn);
+  };
 
   return (
     <form className="container">
@@ -74,7 +83,7 @@ function NumberFilter() {
         className="btn-filter"
         type="button"
         data-testid="button-filter"
-        onClick={ () => setFilterNumeric([...filterNumeric, numberFilters]) }
+        onClick={ filter }
       >
         Filtrar
       </button>
