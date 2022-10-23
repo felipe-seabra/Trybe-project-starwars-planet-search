@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Mycontext } from '../context/MyContext';
 
 function NumberFilter() {
@@ -25,10 +25,6 @@ function NumberFilter() {
     'menor que',
     'igual a',
   ];
-
-  useEffect(() => {
-    // continuar
-  });
 
   return (
     <form className="container">
