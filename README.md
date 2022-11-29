@@ -6,8 +6,6 @@ O projeto tem por objetivo a avaliação e prática dos conhecimentos adquiridos
 
 ### *ATENÇÃO: Para utilizar a aplicação acesse o link no canto direito em "About"*.
 
-![img](projectIntro.gif)
-
 ---
 
 # Sumário
@@ -70,32 +68,3 @@ npm run lint:styles
 ```
 ---
 
-## Desmontração de Uso
-
-### Buscando pelo Nome do Planeta
-![img](demonstration-1.gif)
-
----
-
-### Filtrando pelo valor da coluna
-![img](demonstration-2.gif)
-
----
-
-### Usando filtros em conjuntos
-![img](demonstration-3.gif)
-
----
-
-### Testando quantidade de filtros disponíves
-![img](demonstration-4.gif)
-
----
-
-### Removendo filtros ativos
-![img](demonstration-5.gif)
-
----
-
-### Ordenando colunas de forma Ascendente e Descendente
-![img](demonstration-6.gif)
