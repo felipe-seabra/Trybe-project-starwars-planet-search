@@ -68,3 +68,4 @@ npm run lint:styles
 ```
 ---
 
+© Desenvolvido por [Felipe Seabra](https://www.linkedin.com/in/felipe-seabra/) 
